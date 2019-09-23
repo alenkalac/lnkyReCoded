@@ -1,0 +1,47 @@
+{% extends "_base.twig" %}
+
+{% block style %}
+	@import "/css/main.css";
+{% endblock %}
+
+{% block content %}
+	<div class="container-fluid navbar-inverse bg-inverse login-page">
+		{% include "_no_login_nav.twig" %}
+	</div>
+
+	<div class="container login-container">
+		<div class="row">
+			<div class="col-md-12 row row-login-form">
+				<div class="col-md-2"></div>
+				<div class="push-md-4 col-md-4 login-form">
+					<h1 class="lnky">lnky</h1>
+					<form method="post" action="/login">
+						<label for="email">Email</label>
+						<div class="form-group input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope-o"></i></span>
+							<input class="form-control" type="text" name="email" id="email" aria-describedby="basic-addon1" required>
+
+						</div>
+						<label for="password">Password</label>
+						<div class="form-group input-group">
+							<input class="form-control" type="password" name="password" aria-describedby="basic-addon2" required>
+						</div>
+						<div class="form-group">
+							<input class="form-control" type="submit" value="LOGIN">
+						</div>
+					</form>
+				</div>
+
+				<div class="pull-md-4 col-md-4 article">
+					<p class="border-right">
+						Please Log In with your email and password. If you don't have an account yet, please register by clicking the <strong>Register</strong> button below.
+					</p>
+				</div>
+			</div>
+			<div class="col-md-12 center">
+				<h3>NO LNKY ACCOUNT?</h3>
+				<a class="cta-reg-btn" href="/register">REGISTER</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700');
+
+body {
+	margin: 0;
+	padding: 0;
+	padding-bottom: 350px;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.no-margin {
+	margin: 0;
+}
+
+.main-header {
+	height: 588px;
+	box-shadow: 0px 4px 3px rgba(0,0,0,0.4);
+	overflow: hidden;
+}
+
+.f-left {
+}
+
+.center {
+	text-align: center;
+}
+
+.f-left:after {
+	clear: both;
+}
+
+.header {
+	padding-bottom: 500px;
+	margin-bottom: -500px;
+	
+}
+
+.header:before {
+	content: "";
+	position: absolute;
+	top:0;
+	width: 100%;
+	height: 100%;
+	/*background: rgba(47,135,91,0.4);*/
+	background: rgba(28, 84, 125, 0.5);
+}
+
+.header:after {
+	content: "";
+	clear: both;
+}
+
+nav {
+	padding: 15px;
+}
+
+.lnky, .lnky-logo {
+	font-family: 'Abril Fatface', cursive;
+	text-transform: uppercase;
+	text-decoration: underline;
+}
+
+.lnky:hover, .lnky-logo:hover {
+	text-decoration: underline;
+}
+
+.lnky-logo {
+	font-size: 2.3em;
+	color: white;
+	margin: 0;
+	margin-top: 0px;
+}
+
+nav .logo {
+	font-size: 2.3em;
+	display: inline;
+	float: left;
+	color: white;
+	margin: 0;
+	margin-top: 5px;
+}
+
+nav .logo a:hover {
+	color: white;
+}
+
+nav .btn-group {
+	float: right;
+}
+
+nav .btn-group a, .cta-reg-btn {
+	padding: 15px 25px;
+	margin-right: 10px;
+	border: 2px solid white;
+	text-decoration: none;
+	transition: background 0.2s ease-in-out;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+nav .btn-group .login-btn:hover {
+	background: rgba(255,255,255,0.2);
+	color: white;
+}
+
+nav .btn-group .reg-btn:hover {
+	background: rgba(255,255,255,0.8);
+}
+
+nav .btn-group .reg-btn {
+	margin-right: 0;
+	background: white;
+	/*color: rgb(47,135,91);*/
+	color: rgb(28, 84, 125);
+}
+
+nav a {
+	color: white;
+}
+
+.header-2:after {
+	content: "";
+	clear: both;
+}
+
+.no-padding {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.no-padding:after {
+	content: "";
+	clear: both;
+}
+
+.hero {
+	background-image: url("../img/hero.jpg");
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.header {
+	position: relative;
+}
+
+.main-body {
+	margin-top: 130px;
+	text-align: center;
+
+}
+
+.main-body .url {
+	font-size: 2em;
+	padding: 5px 20px;
+	margin-top: 20px;
+	width: 80%;
+	height: 65px;
+	border: none;
+	text-align: center;
+}
+
+.headline {
+	font-size: 2.3em;
+	color: white;
+}
+
+.sbtn {
+	background: #ee6123;
+	border: none;
+	margin-top: 20px;
+	height: 65px;
+	padding: 0 25px;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: background 0.2s ease-in-out;
+	color: white;
+	font-weight: bold;
+}
+
+.sbtn:hover {
+	background: #e45212;
+}
+
+.anim {
+	opacity: 0;
+}
+
+.article {
+	margin-top: 35px;
+	text-align: center;
+}
+
+.article p {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 1.6em;
+	color: gray;
+}
+
+.article p a {
+	color: #ee6123;
+}
+
+.article h2 {
+	text-align: center;
+	font-size: 2.5em;
+}
+
+.article .article-icon {
+	font-size: 5em;
+}
+
+.article .article-image {
+	width: 250px;
+}
+
+@media (max-width: 767px) {
+	.main-body .url {
+		width: 70%;
+		font-size: 1.5em;
+	}
+}
+
+@media (max-width:  474px ) {
+	.main-body .url { 
+		width: 100%;
+		font-size: 1em;
+	}
+
+	.sbtn {
+		margin-top: 5px;
+		width: 100%;
+
+	}
+	.main-body {
+		margin-top: 20px;
+	}
+
+	.logo {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+}
+
+
+
+/*======================================*/
+
+.login-page nav a.reg-btn {
+	color: black;
+}
+
+.border-right {
+	border-right: 1px dashed black;
+	padding: 40px 0;
+	padding-right: 15px;
+	text-align: justify;
+}
+
+.login-container {
+	margin-top: 40px;
+}
+
+.login-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.login-form form {
+	width: 100%;
+	margin-bottom: 25px;
+}
+
+.login-form input[type="submit"] {
+	cursor: pointer;
+}
+
+.login-form label {
+	display: block;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 1.1em;
+	text-transform: uppercase;
+	color: gray;
+	margin-bottom: 5px;
+}
+
+.row-login-form {
+	margin-bottom: 40px;
+}
+
+.cta-reg-btn {
+	display: inline-block;
+	background: #ee6123;
+	color: white;
+	width: 300px;
+}
+
+.cta-reg-btn:hover {
+	color: white;
+	text-decoration: none;
+}
+
+.row-login-form strong {
+	text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+	.border-right {
+		border-right: 0;
+		padding: 0;
+	}
+
+	.row-login-form .article {
+		margin-top: 10px;
+	}
+}

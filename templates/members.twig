@@ -1,0 +1,35 @@
+{% extends "_base.twig" %}
+
+{% block style %}
+	@import "/css/members.css";
+{% endblock %}
+
+{% block content %}
+	<div class="members-header">
+		<nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+			<div class="container">
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+	    	<span class="navbar-toggler-icon"></span>
+				  </button>
+				  <a class="navbar-brand lnky-logo" href="/members">LNKY</a>
+				  <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+					  	<div class="navbar-nav">
+					      <a class="nav-item nav-link" href="/members">Members</a>
+					      <a class="nav-item nav-link disabled" href="/tools">Tools</a>
+					      <a class="nav-item nav-link" href="/logout">Logout</a>
+					    </div>
+				  </div>
+			</div>
+	  		
+		</nav>
+	</div>
+	<div class="container-fluid no-padding text-white container-body clearfix">
+		<div class="nav-side bg-inverse">
+			
+		</div>
+		<div class="member-content">
+			stuff <br>
+			dsdsd
+		</div>
+	</div>
+{% endblock %}

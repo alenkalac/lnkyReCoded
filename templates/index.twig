@@ -1,0 +1,127 @@
+{% extends "_base.twig" %}
+
+{% block style %}
+	@import "/css/main.css";
+	@import "/css/animate.css"
+{% endblock %}
+
+{% block content %}
+	
+	<div class="main-header">
+		<div class="container-fluid no-padding">
+			<header class="header hero">
+				{% include "_no_login_nav.twig" %}
+			</header>
+
+			<div class="container">
+				<div class="row main-body animated fadeInUp ">
+					<div class="col-md-12">
+						<div class="headline">EARN MORE WITH ADF.LY USING <span class="lnky">LNKY</span></div>
+						<form class="row">
+							<div class="col-12">
+								<input class="url" type="text" placeholder="Paste Link Here To Shorten">
+							</div>
+							<div class="col-12">
+								<button type="submit" class="sbtn">Shorten</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 offset-md-2 article">
+				<h2>DEFEAT ADFLY SKIPPERS / BLOCKERS</h2>
+				<p>
+					Losing revenue due to link skipper extensions? LNKY provides additional security to your links. Only show content when "SKIP AD" is clicked.
+				</p>
+			</div>
+		</div>
+
+		<div class="row 3-col">
+			<div class="col-md-4">
+				<div class="article anim">
+					<div class="article-icon">
+						<i class="fas fa-users" aria-hidden="true"></i>
+					</div>
+					<h3>EASE TO JOIN</h3>
+					<p>
+						Simply Login using your already existing ADF.LY account to start using LNKY. <br>Have no adfly account? 
+						<br><a href="">Register for a free adfly account here.</a>
+					</p>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="article anim">
+					<div class="article-icon">
+						<i class="fas fa-link fa-rotate-90" aria-hidden="true"></i>
+					</div>
+					<h3>SHARE LINKS</h3>
+					<p>
+						LNKY will create links for you on ADF.LY. You'll get a new link which you share with friends and family.
+					</p>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="article anim">
+					<div class="article-icon">
+						<i class="fas fa-chart-line"></i>
+					</div>
+					<h3>EARN MORE</h3>
+					<p>
+						Monitor your ADF.LY account and witness an increase in clicks. Let LNKY battle adfly killers while you focus on delivering your content.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row article clearfix animated fadeInRight">
+			<div class="col-xl-3 col-md-12 col-sm-12 center"><img class="article-image f-left" src="img/intro2.png"></div>
+			<div class="col-xl-9 col-md-12 col-sm-12">
+				<h3>LNKY SECURES YOUR LINKS</h3>
+				<p>
+					Your content link will be cloaked with a unique LNKY url (optional).
+					If someone tries to bypass adfly by sharing a direct link to your content,
+					LNKY will take them back to your ADFLY where they will have 
+					to click "SKIP AD" before viewing your content so you make more money. 
+				</p>
+			</div>
+		</div>
+
+	</div>
+
+	<script>
+		//TODO: MAKE A JAVASCRIPT FILE FOR JAVASCRIPT STUFF
+		$(document).ready(function(){
+			var anim1 = true;
+			checkArticleAnimationStart();
+
+			$(window).scroll(function(){
+				checkArticleAnimationStart();
+			});
+
+			function checkArticleAnimationStart() {
+
+				if(anim1 == false) return;
+				var wScroll = $(this).scrollTop();
+				var wHeight = $(window).height();
+				var bOffset = wScroll + wHeight;
+
+				if(bOffset >= 960) {
+					$(".anim").each(function(el) {
+						setTimeout(function(){
+							$('.anim').eq(el).addClass("animated fadeInUp");
+						}, 100 * (el+1));
+					});
+
+					anim1 = false
+				}
+			}
+		});
+	</script>
+{% endblock %}

@@ -1,0 +1,56 @@
+@import "../plugins/bootstrap/css/bootstrap.min.css";
+@import "../plugins/fontawsome/css/font-awesome.min.css";
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700');
+
+.no-padding {
+	padding: 0;
+}
+
+.members-header .nav-link {
+	font-size: 18px;
+}
+
+.lnky, .lnky-logo {
+	font-family: 'Abril Fatface', cursive;
+	text-transform: uppercase;
+	text-decoration: underline;
+}
+
+.lnky:hover, .lnky-logo:hover {
+	text-decoration: underline;
+}
+
+.lnky-logo {
+	font-size: 2.0em;
+	color: white;
+	margin: 0;
+	margin-top: 0px;
+}
+
+.container-body {
+	position: relative;
+}
+
+.nav-side {
+	width: 200px;
+	float: left;
+}
+
+.member-content {
+	margin-left: 200px;
+	background: white;
+}
+
+@media (max-width: 991px) {
+	.members-header .navbar {
+		display: block;
+	}
+	.members-header .navbar-toggler {
+		margin-top: 10px;
+	}
+
+	.members-header .nav-link {
+		text-align: center;
+	}
+}
