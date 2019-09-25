@@ -25,31 +25,40 @@ class MainController extends AbstractController {
     }
 
     /**
-     * @Route("/short/{url}")
+     * @Route("/short", name="short", methods={"POST"})
      * @param Request $request
      * @param UrlManager $urlManager
+     * @param AdflyApi $adflyApi
      * @return Response
      */
-    public function genUrl(Request $request, UrlManager $urlManager) {
+    public function genUrl(Request $request, UrlManager $urlManager, AdflyApi $adflyApi) {
         $url = $request->get("url");
         //TODO: VALIDATE URL
 
-        $link = $urlManager->generateAndLink($url);
+        $userId = $_ENV["ADFLY_USER_ID"];
+        $pub = $_ENV["ADFLY_PUBLIC_KEY"];
+        $adflyApi->setUserId($userId);
+        $adflyApi->setPublicKey($pub);
 
-        return new Response($link->getShort());
+        $link = $urlManager->generateShortLink($url);
+        $urlShortLink = "http://lnky.cc/" . $link->getShort();
+
+        $remoteUrl = $adflyApi->shorten(array($urlShortLink));
+        $urlManager->linkAndSave($remoteUrl);
+
+        return new Response($remoteUrl);
     }
 
     /**
      * @Route("/{short}")
      * @param Request $request
-     * @param AdflyApi $adflyApi
      * @return Response
      */
-    public function shortCode(Request $request, AdflyApi $adflyApi) {
+    public function shortCode(Request $request) {
         $short = $request->get("short");
 
         $userId = $_ENV["ADFLY_USER_ID"];
-        $pub = "ADFLY_PUBLIC_KEY";
+        $pub = $_ENV["ADFLY_PUBLIC_KEY"];
         $adflyApi->setUserId($userId);
         $adflyApi->setPublicKey($pub);
 

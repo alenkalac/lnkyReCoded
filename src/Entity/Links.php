@@ -26,6 +26,11 @@ class Links
      */
     private $url;
 
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $remote_url;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -61,5 +66,17 @@ class Links
         $data["expanded"] = $this->url;
 
         return json_encode($data);
+    }
+
+    public function getRemoteUrl(): ?string
+    {
+        return $this->remote_url;
+    }
+
+    public function setRemoteUrl(string $short_url): self
+    {
+        $this->remote_url = $short_url;
+
+        return $this;
     }
 }

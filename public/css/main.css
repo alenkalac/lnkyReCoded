@@ -222,7 +222,7 @@ nav a {
 
 @media (max-width: 767px) {
 	.main-body .url {
-		width: 70%;
+		width: 100%;
 		font-size: 1.5em;
 	}
 }

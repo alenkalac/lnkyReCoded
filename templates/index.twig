@@ -12,25 +12,27 @@
 			<header class="header hero">
 				{% include "_no_login_nav.twig" %}
 			</header>
+		</div>
 
+		<form action="/short" method="POST">
 			<div class="container">
 				<div class="row main-body animated fadeInUp ">
 					<div class="col-md-12">
 						<div class="headline">EARN MORE WITH ADF.LY USING <span class="lnky">LNKY</span></div>
-						<form class="row">
+						<div class="row">
 							<div class="col-12">
-								<input class="url" type="text" placeholder="Paste Link Here To Shorten">
+								<input class="url" name="url" type="text" placeholder="Paste Link Here To Shorten">
 							</div>
 							<div class="col-12">
 								<button type="submit" class="sbtn">Shorten</button>
 							</div>
-						</form>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-
+		</form>
 	</div>
+
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 offset-md-2 article">

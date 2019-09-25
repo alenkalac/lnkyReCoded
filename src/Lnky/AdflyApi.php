@@ -41,7 +41,9 @@ class AdflyApi {
             $params[sprintf('url[%d]', $i++)] = $url;
         }
 
-        return $this->client->post('v1/shorten', ["form_params" => $this->getParams($params)]);
+        $response = $this->client->post('v1/shorten', ["form_params" => $this->getParams($params)]);
+        $jsonResponse =  json_decode($response->getBody()->getContents());
+        return $jsonResponse->data['0']->short_url;
     }
 
     /**
